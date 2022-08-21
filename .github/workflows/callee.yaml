@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        intro: ["hello", "hola", "안녕", "hi"]
+        intro: ["hi", "hola"]
     steps:
       - run: | 
           echo ${{ matrix.intro }} ${{ inputs.username }}
