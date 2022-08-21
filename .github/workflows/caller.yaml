@@ -10,9 +10,15 @@ jobs:
       username: outsider
     secrets:
       SECRET_SEED: world
+  
   call-workflow-2-in-local-repo:
     uses: ./.github/workflows/callee.yaml
     with:
       username: mona
     secrets:
       SECRET_SEED: seed
+  
+  post-call:
+    runs-on: ubunut-latest
+    steps:
+      - run: echo "DONE"
