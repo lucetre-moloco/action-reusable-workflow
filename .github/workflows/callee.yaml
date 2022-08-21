@@ -12,11 +12,17 @@ on:
         required: true
 
 jobs:
-  reusable_workflow_job:
+  reusable_workflow_job_1:
     runs-on: ubuntu-latest
     steps:
       - run: | 
           echo ${{ inputs.username }}
-          echo ${{ github.sha }}
+          echo ${{ secrets.SECRET_SEED }}
+          echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
+  reusable_workflow_job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          echo ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
           echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
