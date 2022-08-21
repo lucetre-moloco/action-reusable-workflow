@@ -17,9 +17,3 @@ jobs:
       username: mona
     secrets:
       SECRET_SEED: seed
-  
-  post-call:
-    needs: [call-workflow-1, call-workflow-2]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "DONE"
