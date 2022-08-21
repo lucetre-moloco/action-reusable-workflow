@@ -5,13 +5,13 @@ on:
 
 jobs:
   call-workflow-1-in-local-repo:
-    uses: lucetre/action-reusable-workflow/.github/workflows/reusable-workflow.yaml@47e25a41331f04ce3144b4e6dc775f1b9a3a07bc
+    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@47e25a41331f04ce3144b4e6dc775f1b9a3a07bc
     with:
       username: outsider
     secrets:
       SECRET_SEED: world
   call-workflow-2-in-local-repo:
-    uses: ./.github/workflows/reusable-workflow.yaml
+    uses: ./.github/workflows/callee.yaml
     with:
       username: mona
     secrets:
