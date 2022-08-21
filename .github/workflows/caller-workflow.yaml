@@ -1,0 +1,18 @@
+name: Caller Workflow
+
+on:
+  push:
+
+jobs:
+  call-workflow-1-in-local-repo:
+    uses: lucetre/actions-reusable-workflow/.github/workflows/resuable-workflow.yaml@47e25a41331f04ce3144b4e6dc775f1b9a3a07bc
+    with:
+      username: outsider
+    secrets:
+      SECRET_SEED: world
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/resuable-workflow.yaml
+    with:
+      username: mona
+    secrets:
+      SECRET_SEED: seed
