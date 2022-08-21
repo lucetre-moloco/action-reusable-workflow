@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-workflow-1:
-    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@12083a0c7b7ce8f598efaabca9a93fc15c789327
+    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@latest
     with:
       username: outsider
     secrets:
