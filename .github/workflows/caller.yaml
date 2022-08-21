@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-workflow-1-in-local-repo:
-    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@47e25a41331f04ce3144b4e6dc775f1b9a3a07bc
+    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@b701907e363b2bb3b80b4c1a1d0ed3cea665902c
     with:
       username: outsider
     secrets:
