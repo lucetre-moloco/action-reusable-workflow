@@ -1,32 +1,32 @@
-name: Caller Workflow
+name: Caller
 
 on:
   push:
 
 jobs:
-  pre-call-workflows:
+  pre-call:
     runs-on: ubuntu-latest
     steps:
       - run: echo "start"
 
-  call-workflow-remote:
-    needs: pre-call-workflows
+  call-remote:
+    needs: pre-call
     uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@main
     with:
       username: outsider
     secrets:
       SECRET_SEED: world
   
-  call-workflow-local:
-    needs: pre-call-workflows
+  call-local:
+    needs: pre-call
     uses: ./.github/workflows/callee.yaml
     with:
       username: mona
     secrets:
       SECRET_SEED: seed
   
-  post-call-workflows:
-    needs: [call-workflow-remote, call-workflow-local]
+  post-call:
+    needs: [call-remote, call-local]
     runs-on: ubuntu-latest
     steps:
       - run: echo "done"
