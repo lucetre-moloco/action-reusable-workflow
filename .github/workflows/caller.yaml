@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: echo "start"
 
-  call-remote:
+  remote:
     needs: pre-call
     uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@main
     with:
@@ -17,7 +17,7 @@ jobs:
     secrets:
       SECRET_SEED: world
   
-  call-local:
+  local:
     needs: pre-call
     uses: ./.github/workflows/callee.yaml
     with:
@@ -26,7 +26,7 @@ jobs:
       SECRET_SEED: seed
   
   post-call:
-    needs: [call-remote, call-local]
+    needs: [remote, local]
     runs-on: ubuntu-latest
     steps:
       - run: echo "done"
