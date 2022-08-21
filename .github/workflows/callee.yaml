@@ -1,4 +1,4 @@
-name: Callee Workflow
+name: Callee
 
 on:
   push:
