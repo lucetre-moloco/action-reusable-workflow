@@ -19,6 +19,7 @@ jobs:
       SECRET_SEED: seed
   
   post-call-workflows:
+    needs: [call-workflow-remote, call-workflow-local]
     runs-on: ubuntu-latest
     steps:
       - run: echo "done"
