@@ -4,16 +4,21 @@ on:
   push:
 
 jobs:
-  call-workflow-1:
+  call-workflow-remote:
     uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@main
     with:
       username: outsider
     secrets:
       SECRET_SEED: world
   
-  call-workflow-2:
+  call-workflow-local:
     uses: ./.github/workflows/callee.yaml
     with:
       username: mona
     secrets:
       SECRET_SEED: seed
+  
+  post-call-workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "done"
