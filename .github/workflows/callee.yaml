@@ -1,4 +1,4 @@
-name: Reusable Workflow
+name: Callee Workflow
 
 on:
   push:
