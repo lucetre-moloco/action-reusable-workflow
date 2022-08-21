@@ -19,7 +19,7 @@ jobs:
       SECRET_SEED: seed
   
   post-call:
-    needs: [call-workflow-1-in-local-repo, call-workflow-2-in-local-repo]
+    needs: [call-workflow-1-in-local-repo]
     runs-on: ubunut-latest
     steps:
       - run: echo "DONE"
