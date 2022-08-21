@@ -4,14 +4,14 @@ on:
   push:
 
 jobs:
-  call-workflow-1-in-local-repo:
+  call-workflow-1:
     uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@12083a0c7b7ce8f598efaabca9a93fc15c789327
     with:
       username: outsider
     secrets:
       SECRET_SEED: world
   
-  call-workflow-2-in-local-repo:
+  call-workflow-2:
     uses: ./.github/workflows/callee.yaml
     with:
       username: mona
@@ -19,7 +19,7 @@ jobs:
       SECRET_SEED: seed
   
   post-call:
-    needs: [call-workflow-1-in-local-repo]
+    needs: [call-workflow-1, call-workflow-2]
     runs-on: ubunut-latest
     steps:
       - run: echo "DONE"
