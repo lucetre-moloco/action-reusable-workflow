@@ -17,5 +17,6 @@ jobs:
     steps:
       - run: | 
           echo ${{ inputs.username }}
+          echo ${{ github.sha }}
           echo ${{ secrets.SECRET_SEED }}
           echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
