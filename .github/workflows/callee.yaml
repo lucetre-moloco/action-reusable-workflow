@@ -12,20 +12,19 @@ on:
         required: true
 
 jobs:
-  reusable_workflow_job_1:
+  reusable_1:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        intro: ["hello", "hi"]
-    runs-on: ubuntu-latest
+        intro: ["hello", "hola", "안녕", "hi"]
     steps:
       - run: | 
-          echo ${{ matrix.intro }}
-          echo ${{ inputs.username }}
+          echo ${{ matrix.intro }} ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
           echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
           
-  reusable_workflow_job_2:
-    needs: reusable_workflow_job_1
+  reusable_2:
+    needs: reusable_1
     runs-on: ubuntu-latest
     steps:
       - run: | 
