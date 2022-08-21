@@ -20,6 +20,6 @@ jobs:
   
   post-call:
     needs: [call-workflow-1, call-workflow-2]
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "DONE"
