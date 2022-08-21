@@ -2,11 +2,6 @@ name: Reusable Workflow
 
 on:
   push:
-  workflow_dispatch:
-    inputs:
-      username:
-        required: true
-        type: string
   workflow_call:
     inputs:
       username:
