@@ -18,16 +18,18 @@ jobs:
       matrix:
         intro: ["hi", "hola"]
     steps:
-      - run: | 
+      - run: |
           echo ${{ matrix.intro }} ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
           echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
-          
+          bash test-script.sh
+
   reusable_2:
     needs: reusable_1
     runs-on: ubuntu-latest
     steps:
-      - run: | 
+      - run: |
           echo ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
-          echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
+          echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g'
+          bash test-script.sh
