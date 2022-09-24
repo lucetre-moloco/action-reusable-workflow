@@ -11,12 +11,12 @@ jobs:
 
   remote:
     needs: pre-call
-    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@main
+    uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@test-script
     with:
       username: outsider
     secrets:
       SECRET_SEED: world
-  
+
   local:
     needs: pre-call
     uses: ./.github/workflows/callee.yaml
@@ -24,7 +24,7 @@ jobs:
       username: mona
     secrets:
       SECRET_SEED: seed
-  
+
   post-call:
     needs: [remote, local]
     runs-on: ubuntu-latest
