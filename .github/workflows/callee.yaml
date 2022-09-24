@@ -18,6 +18,10 @@ jobs:
       matrix:
         intro: ["hi", "hola"]
     steps:
+      - uses: actions/checkout@v3
+        # with:
+        #   repository: ${{ github.repository }}
+        #   ref: test-script
       - run: |
           echo ${{ matrix.intro }} ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
