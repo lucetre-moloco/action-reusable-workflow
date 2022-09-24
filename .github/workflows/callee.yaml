@@ -19,9 +19,8 @@ jobs:
         intro: ["hi", "hola"]
     steps:
       - uses: actions/checkout@v3
-        # with:
-        #   repository: ${{ github.repository }}
-        #   ref: test-script
+        with:
+          ref: test-script
       - run: |
           echo ${{ matrix.intro }} ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
@@ -32,6 +31,9 @@ jobs:
     needs: reusable_1
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: test-script
       - run: |
           echo ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
