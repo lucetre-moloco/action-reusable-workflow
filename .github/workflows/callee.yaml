@@ -8,7 +8,7 @@ on:
         type: string
       exit-code:
         required: false
-        default: 0
+        default: "0"
         type: string
     secrets:
       SECRET_SEED:
