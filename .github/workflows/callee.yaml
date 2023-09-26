@@ -31,3 +31,4 @@ jobs:
           echo ${{ inputs.username }}
           echo ${{ secrets.SECRET_SEED }}
           echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' 
+      - run: exit 1
