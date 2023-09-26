@@ -1,7 +1,6 @@
 name: Caller
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
@@ -26,8 +25,16 @@ jobs:
     secrets:
       SECRET_SEED: seed
 
-  post-call:
+  post-call-success:
+    if: success()
     needs: [remote, local]
     runs-on: ubuntu-latest
     steps:
-      - run: echo "done"
+      - run: echo "success"
+
+  post-call-failure:
+    if: failure()
+    needs: [remote, local]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "failure"
