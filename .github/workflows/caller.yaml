@@ -19,7 +19,6 @@ jobs:
     uses: lucetre/action-reusable-workflow/.github/workflows/callee.yaml@test-script
     with:
       username: outsider
-      exit-code: ${{ inputs.exit-code }}
     secrets:
       SECRET_SEED: world
 
@@ -28,6 +27,7 @@ jobs:
     uses: ./.github/workflows/callee.yaml
     with:
       username: mona
+      exit-code: ${{ inputs.exit-code }}
     secrets:
       SECRET_SEED: seed
 
