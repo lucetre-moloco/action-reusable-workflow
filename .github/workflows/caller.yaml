@@ -2,6 +2,7 @@ name: Caller
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   pre-call:
