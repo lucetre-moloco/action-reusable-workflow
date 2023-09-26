@@ -1,7 +1,6 @@
 name: Callee
 
 on:
-  push:
   workflow_call:
     inputs:
       username:
