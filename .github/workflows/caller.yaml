@@ -24,7 +24,7 @@ jobs:
 
   local:
     needs: pre-call
-    uses: ./.github/workflows/callee.yaml
+    uses: ./.github/workflows/a/callee.yaml
     with:
       username: mona
       exit-code: ${{ inputs.exit-code }}
